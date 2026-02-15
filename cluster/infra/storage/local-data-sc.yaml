@@ -7,6 +7,3 @@ metadata:
 provisioner: rancher.io/local-path
 volumeBindingMode: WaitForFirstConsumer
 reclaimPolicy: Delete
-parameters:
-  nodePath: /data/k3s-storage
-

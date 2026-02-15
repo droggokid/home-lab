@@ -1,0 +1,16 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: filebrowser-cert
+  namespace: apps
+spec:
+  secretName: filebrowser-tls
+  issuerRef:
+    name: homelab-ca
+    kind: ClusterIssuer
+  dnsNames:
+    - files.home.arpa
+  privateKey:
+    algorithm: RSA
+    size: 2048
+    rotationPolicy: Never
