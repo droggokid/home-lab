@@ -60,11 +60,11 @@ spec:
       volumes:
         - name: movies
           hostPath:
-            path: /data/storage/media/movies
+            path: /data/storage/files/media/movies
             type: Directory
         - name: series
           hostPath:
-            path: /data/storage/media/series
+            path: /data/storage/files/media/series
             type: Directory
         - name: data
           persistentVolumeClaim:
