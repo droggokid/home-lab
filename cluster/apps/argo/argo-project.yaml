@@ -59,7 +59,7 @@ spec:
       kind: NetworkPolicy
     - group: "cert-manager.io"
       kind: Certificate
-    - group: "traefik.containo.us"
+    - group: "traefik.io"
       kind: Middleware
     - group: ""
       kind: ResourceQuota
