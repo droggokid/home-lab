@@ -1,0 +1,2 @@
+com.getpostman.Postman
+com.jagexlauncher.JagexLauncher

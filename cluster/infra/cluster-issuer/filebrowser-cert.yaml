@@ -10,7 +10,8 @@ spec:
     kind: ClusterIssuer
   dnsNames:
     - files.home.arpa
+  duration: 2160h
+  renewBefore: 360h
   privateKey:
     algorithm: RSA
     size: 2048
-    rotationPolicy: Never

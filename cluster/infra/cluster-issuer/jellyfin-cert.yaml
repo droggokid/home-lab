@@ -1,15 +1,15 @@
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-  name: argocd-cert
-  namespace: argocd
+  name: jellyfin-cert
+  namespace: apps
 spec:
-  secretName: argocd-tls
+  secretName: jellyfin-tls
   issuerRef:
     name: homelab-ca
     kind: ClusterIssuer
   dnsNames:
-    - argo.home.arpa
+    - jellyfin.home.arpa
   duration: 2160h
   renewBefore: 360h
   privateKey:

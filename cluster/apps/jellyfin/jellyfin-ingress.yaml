@@ -1,21 +1,23 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: appname
+  name: jellyfin
   namespace: apps
   annotations:
-    traefik.ingress.kubernetes.io/router.entrypoints: web
+    traefik.ingress.kubernetes.io/router.entrypoints: websecure
 spec:
-  ingressClassName: traefik
+  tls:
+    - hosts:
+        - jellyfin.home.arpa
+      secretName: jellyfin-tls
   rules:
-    - host: appname.local
+    - host: jellyfin.home.arpa
       http:
         paths:
           - path: /
             pathType: Prefix
             backend:
               service:
-                name: appname
+                name: jellyfin
                 port:
                   number: 80
-
