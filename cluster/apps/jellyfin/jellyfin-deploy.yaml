@@ -34,23 +34,16 @@ spec:
               memory: 4Gi
           livenessProbe:
             httpGet:
-              path: /health
+              path: /System/Ping
               port: 8096
             initialDelaySeconds: 60
             periodSeconds: 10
           readinessProbe:
             httpGet:
-              path: /health
+              path: /System/Ping
               port: 8096
             initialDelaySeconds: 60
             periodSeconds: 10
-          securityContext:
-            runAsNonRoot: true
-            runAsUser: 1000
-            allowPrivilegeEscalation: false
-            capabilities:
-              drop:
-                - ALL
           volumeMounts:
             - name: movies
               mountPath: /media/movies

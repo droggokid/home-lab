@@ -6,6 +6,8 @@ metadata:
 spec:
   isCA: true
   commonName: homelab-ca
+  duration: 87600h
+  renewBefore: 720h
   secretName: homelab-ca-keypair
   privateKey:
     algorithm: RSA
