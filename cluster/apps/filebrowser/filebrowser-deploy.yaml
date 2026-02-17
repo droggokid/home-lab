@@ -26,9 +26,6 @@ spec:
             - "--root=/srv"
             - "--database=/database/filebrowser.db"
             - "--config=/config/settings.json"
-          envFrom:
-            - secretRef:
-                name: filebrowser-auth
           resources:
             requests:
               cpu: 100m
