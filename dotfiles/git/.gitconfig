@@ -1,0 +1,8 @@
+[user]
+	email = raduflorinmunteanu@gmail.com
+[credential]
+	helper = store
+[core]
+  pager = delt
+[interactive]
+  diffFilter = delta --color-only

@@ -83,6 +83,11 @@ source $ZSH/oh-my-zsh.sh
 
 alias toggle-shell="~/toggle-shell.sh"
 alias bat="batcat"
+alias cd="z"
+alias vim="nvim"
+alias zshrc="nvim ~/Github/home-lab/dotfiles/zsh/.zshrc"
+alias vimrc="nvim ~/Github/home-lab/dotfiles/nvim/.config/nvim"
+alias dotfiles="cd ~/Github/home-lab/dotfiles"
 
 # User configuration
 
@@ -150,3 +155,6 @@ export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/keyring/ssh"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# --- neovim
+export PATH="$PATH:/opt/nvim-linux-x86_64/bin"

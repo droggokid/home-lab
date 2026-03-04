@@ -11,3 +11,5 @@ spec:
     limits.memory: 6Gi
     persistentvolumeclaims: "10"
     count/pods: "20"
+    requests.nvidia.com/gpu: "1"
+    limits.nvidia.com/gpu: "1"
