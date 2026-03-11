@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: temporal-ui
-          image: temporalio/ui:2.38
+          image: temporalio/ui:latest
           ports:
             - containerPort: 8080
               name: http
