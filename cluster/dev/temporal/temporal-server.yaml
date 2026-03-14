@@ -92,9 +92,11 @@ metadata:
   name: temporal-frontend
   namespace: dev
 spec:
+  type: NodePort
   selector:
     app: temporal
   ports:
     - name: grpc-frontend
       port: 7233
       targetPort: 7233
+      nodePort: 30233
