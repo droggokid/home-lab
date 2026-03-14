@@ -83,7 +83,7 @@ source $ZSH/oh-my-zsh.sh
 
 alias toggle-shell="~/toggle-shell.sh"
 alias bat="batcat"
-alias cd="z"
+# alias cd="z" so f5g annoying
 alias vim="nvim"
 alias zshrc="nvim ~/Github/home-lab/dotfiles/zsh/.zshrc"
 alias vimrc="nvim ~/Github/home-lab/dotfiles/nvim/.config/nvim"
