@@ -158,3 +158,6 @@ export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/keyring/ssh"
 
 # --- neovim
 export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
+
+# --- Sway
+export PATH="/usr/local/bin/sway/sway:$PATH"

@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tictac-server
+  namespace: dev
+spec:
+  revisionHistoryLimit: 2
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tictac-server
+  template:
+    metadata:
+      labels:
+        app: tictac-server
+    spec:
+      containers:
+      - name: tictac-server
+        image: ghcr.io/droggokid/tictac-server:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+          name: websocket
+          protocol: TCP
+        resources:
+          requests:
+            cpu: 100m
+            memory: 64Mi
+          limits:
+            cpu: 500m
+            memory: 128Mi
+        livenessProbe:
+          tcpSocket:
+            port: 8080
+          initialDelaySeconds: 10
+          periodSeconds: 10
+        readinessProbe:
+          tcpSocket:
+            port: 8080
+          initialDelaySeconds: 5
+          periodSeconds: 5
