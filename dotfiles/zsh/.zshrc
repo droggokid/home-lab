@@ -161,3 +161,6 @@ export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 
 # --- Sway
 export PATH="/usr/local/bin/sway/sway:$PATH"
+
+# --- brew
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"

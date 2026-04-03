@@ -18,10 +18,10 @@ spec:
     spec:
       runtimeClassName: nvidia
       securityContext:
-        runAsNonRoot: true
-        runAsUser: 1000
-        runAsGroup: 1000
-        fsGroup: 1000
+        runAsNonRoot: false
+        runAsUser: 0
+        runAsGroup: 0
+        fsGroup: 0
       containers:
         - name: jellyfin
           image: jellyfin/jellyfin:10.9.11

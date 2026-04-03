@@ -19,6 +19,16 @@ spec:
       kind: Deployment
       jsonPointers:
         - /spec/replicas
+    - group: ""
+      kind: Secret
+      name: postgres-credentials
+      jsonPointers:
+        - /data
+    - group: ""
+      kind: Secret
+      name: temporal-postgres
+      jsonPointers:
+        - /data
   syncPolicy:
     automated:
       prune: true

@@ -69,6 +69,8 @@ spec:
       kind: Middleware
     - group: ""
       kind: ResourceQuota
+    - group: "policy"
+      kind: PodDisruptionBudget
     - group: "argoproj.io"
       kind: Application
     - group: "argoproj.io"
