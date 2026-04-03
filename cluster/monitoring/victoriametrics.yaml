@@ -71,9 +71,20 @@ spec:
         app: victoriametrics
     spec:
       serviceAccountName: victoriametrics
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 1000
+        runAsGroup: 1000
+        fsGroup: 1000
       containers:
         - name: victoriametrics
-          image: victoriametrics/victoria-metrics:latest
+          image: victoriametrics/victoria-metrics:v1.107.0
+          imagePullPolicy: IfNotPresent
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop:
+                - ALL
           args:
             - "-storageDataPath=/storage"
             - "-retentionPeriod=90d"

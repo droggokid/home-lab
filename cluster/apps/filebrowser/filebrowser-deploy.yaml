@@ -16,9 +16,20 @@ spec:
       labels:
         app: filebrowser
     spec:
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 1000
+        runAsGroup: 1000
+        fsGroup: 1000
       containers:
         - name: filebrowser
-          image: filebrowser/filebrowser:latest
+          image: filebrowser/filebrowser:v2.31.2
+          imagePullPolicy: IfNotPresent
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop:
+                - ALL
           ports:
             - containerPort: 80
           args:
