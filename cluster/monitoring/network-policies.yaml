@@ -12,6 +12,20 @@ spec:
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
+  name: allow-victoriametrics
+  namespace: monitoring
+spec:
+  podSelector:
+    matchLabels:
+      app: victoriametrics
+  policyTypes:
+    - Egress
+  egress:
+    - {}
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
   name: allow-kube-state-metrics
   namespace: monitoring
 spec:
