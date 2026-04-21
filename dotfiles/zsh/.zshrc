@@ -164,3 +164,12 @@ export PATH="/usr/local/bin/sway/sway:$PATH"
 
 # --- brew
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+# --- yazi
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	command yazi "$@" --cwd-file="$tmp"
+	IFS= read -r -d '' cwd < "$tmp"
+	[ "$cwd" != "$PWD" ] && [ -d "$cwd" ] && builtin cd -- "$cwd"
+    rm -f -- "$tmp"
+}

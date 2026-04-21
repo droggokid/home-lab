@@ -1,0 +1,12 @@
+Using your favorite text editor, save our "Hello, Go!" code from earlier in a plain text file named "hello.go".
+
+Open a new terminal or command prompt window.
+
+In the terminal, change to the directory where you saved "hello.go".
+
+Run "go fmt hello.go" to clean up the code formatting. (This step isn't required, but it's a good idea anyway.)
+
+Run "go build hello.go" to compile the source code. This will add an executable file to
+the current directory.
+
+Run "go run hello.go" to run code directly in terminal.
