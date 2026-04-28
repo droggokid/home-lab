@@ -85,9 +85,9 @@ alias toggle-shell="~/toggle-shell.sh"
 alias bat="batcat"
 # alias cd="z" so f5g annoying
 alias vim="nvim"
-alias zshrc="nvim ~/Github/home-lab/dotfiles/zsh/.zshrc"
-alias vimrc="nvim ~/Github/home-lab/dotfiles/nvim/.config/nvim"
-alias dotfiles="cd ~/Github/home-lab/dotfiles"
+alias zshrc="nvim ~/github/home-lab/dotfiles/zsh/.zshrc"
+alias vimrc="nvim ~/github/home-lab/dotfiles/nvim/.config/nvim"
+alias dotfiles="cd /mnt/data/github/home-lab/dotfiles"
 
 # User configuration
 
@@ -122,7 +122,6 @@ autoload -U compinit
 compinit
 
 # --- aliases ---
-alias toggle-shell="~/toggle-shell.sh"
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
@@ -131,18 +130,12 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # --- Rust (cargo) ---
 [ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
 
-# --- Rancher Desktop ---
-export PATH="/home/rudi/.rd/bin:$PATH"
-
 # --- pipx ---
 export PATH="$PATH:$HOME/.local/bin"
 
 # --- Go ---
 export PATH="/usr/local/go/bin:$PATH"
 export PATH="$PATH:$HOME/go/bin"
-
-# --- opencode ---
-export PATH="$HOME/.opencode/bin:$PATH"
 
 # --- nvm ---
 export NVM_DIR="$HOME/.nvm"
@@ -151,19 +144,20 @@ export NVM_DIR="$HOME/.nvm"
 # --- zoxide (zsh version) ---
 eval "$(zoxide init zsh)"
 
-export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/keyring/ssh"
+# SSH agent socket: Arch uses gcr, Ubuntu often uses GNOME keyring
+if [[ -S "$XDG_RUNTIME_DIR/gcr/ssh" ]]; then
+  export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/gcr/ssh"
+elif [[ -S "$XDG_RUNTIME_DIR/keyring/ssh" ]]; then
+  export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/keyring/ssh"
+elif [[ -S "$XDG_RUNTIME_DIR/ssh-agent.socket" ]]; then
+  export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # --- neovim
 export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
-
-# --- Sway
-export PATH="/usr/local/bin/sway/sway:$PATH"
-
-# --- brew
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 # --- yazi
 function y() {
@@ -173,3 +167,6 @@ function y() {
 	[ "$cwd" != "$PWD" ] && [ -d "$cwd" ] && builtin cd -- "$cwd"
     rm -f -- "$tmp"
 }
+
+# --- mise
+eval "$(mise activate zsh)"
