@@ -88,6 +88,8 @@ alias vim="nvim"
 alias zshrc="nvim ~/github/home-lab/dotfiles/zsh/.zshrc"
 alias vimrc="nvim ~/github/home-lab/dotfiles/nvim/.config/nvim"
 alias dotfiles="cd /mnt/data/github/home-lab/dotfiles"
+alias cluster="cd /mnt/data/github/home-lab/cluster/"
+alias scripts="cd /mnt/data/github/home-lab/cluster/infra/scripts/"
 
 # User configuration
 
