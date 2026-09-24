@@ -21,5 +21,6 @@ end
 -- not also be loaded directly here, or bindings/settings can be duplicated.
 load_module("user_defaults")
 load_module("user_overrides")
-load_module("monitors")
+-- nwg-displays writes the active layout here.
+dofile(hyprDir .. "/monitors.lua")
 load_module("workspaces")
