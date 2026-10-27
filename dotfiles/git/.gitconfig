@@ -2,7 +2,7 @@
 	email = raduflorinmunteanu@gmail.com
 	name = droggokid
 [credential]
-	helper = store
+	helper = /usr/lib/git-core/git-credential-libsecret
 [core]
 	pager = delta
 [interactive]
