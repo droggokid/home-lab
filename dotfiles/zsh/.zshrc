@@ -30,7 +30,6 @@ alias scripts='cd ~/github/home-lab/cluster/infra/scripts'
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history 1 | sed -e "s/^[ ]*[0-9]\+[ ]*//;s/[;&|][ ]*alert$//")"'
 
 # Keep an inherited working SSH agent; otherwise find a session agent.
 if [[ ! -S "$SSH_AUTH_SOCK" && -n "$XDG_RUNTIME_DIR" ]]; then
@@ -45,3 +44,5 @@ fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+. "$HOME/.local/share/../bin/env"

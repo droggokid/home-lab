@@ -28,6 +28,14 @@
 -- o.bind("SUPER + H", nil, "voxtype record toggle")
 -- o.bind("SUPER + PERIOD", nil, "omarchy-shell shell toggle omarchy.emojis")
 
+-- Convenient application shortcuts.
+o.bind("SUPER + B", "Browser", { omarchy = "browser" })
+o.bind("SUPER + E", "File manager", { omarchy = "nautilus" })
+
+-- Move the Omarchy menu from Super+Space to Super+D.
+hl.unbind("SUPER + SPACE")
+o.bind("SUPER + D", "Omarchy menu", "omarchy-menu toggle")
+
 -- Disabled Chromium web-app shortcuts.
 hl.unbind("SUPER + SHIFT + A") -- Previously ChatGPT
 hl.unbind("SUPER + SHIFT + ALT + A") -- Previously Grok
@@ -41,3 +49,8 @@ hl.unbind("SUPER + SHIFT + P") -- Previously Google Photos
 hl.unbind("SUPER + SHIFT + S") -- Previously Google Maps
 hl.unbind("SUPER + SHIFT + X") -- Previously X
 hl.unbind("SUPER + SHIFT + ALT + X") -- Previously X Post
+
+-- Screenshot shortcut (the old Google Maps binding is unbound above).
+hl.unbind("PRINT")
+o.bind("SUPER + SHIFT + S", "Screenshot", "omarchy-capture-screenshot")
+

@@ -1,0 +1,22 @@
+# MX Master 3S thumb gestures. Actions fire when the thumb button is released.
+# Execute desktop commands directly so no simulated keyboard input is needed.
+---
+- Device: BD214268
+- MouseGesture: [Mouse Gesture Button]
+- Execute: [omarchy, menu, toggle]
+---
+- Device: BD214268
+- MouseGesture: [Mouse Gesture Button, Mouse Left]
+- Execute: [hyprctl, eval, 'hl.dispatch(hl.dsp.focus({ workspace = "e-1" }))']
+---
+- Device: BD214268
+- MouseGesture: [Mouse Gesture Button, Mouse Right]
+- Execute: [hyprctl, eval, 'hl.dispatch(hl.dsp.focus({ workspace = "e+1" }))']
+---
+- Device: BD214268
+- MouseGesture: [Mouse Gesture Button, Mouse Up]
+- Execute: [hyprctl, eval, 'hl.dispatch(hl.dsp.window.fullscreen({ mode = "fullscreen" }))']
+---
+- Device: BD214268
+- MouseGesture: [Mouse Gesture Button, Mouse Down]
+- Execute: [hyprctl, eval, 'hl.dispatch(hl.dsp.workspace.toggle_special("scratchpad"))']

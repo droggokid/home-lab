@@ -1,6 +1,12 @@
 -- Keep only your personal input overrides here. Uncommented settings below
 -- replace Omarchy's defaults.
 
+-- Mac-style scrolling: content follows your fingers on the trackpad.
+hl.config({ input = { touchpad = { natural_scroll = true } } })
+
+-- Keep cursor movement consistent on the MX Master 3S.
+hl.device({ name = "logitech-mx-master-3s", accel_profile = "flat" })
+
 -- Keyboard layout and options.
 -- See https://wiki.hypr.land/Configuring/Basics/Variables/#input
 -- hl.config({

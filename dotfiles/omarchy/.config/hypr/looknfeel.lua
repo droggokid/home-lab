@@ -48,3 +48,27 @@
 --     column_width = 0.97,
 --   },
 -- })
+
+-- Compact window spacing and a subtle white focused-window highlight.
+hl.config({
+  decoration = {
+    rounding = 6,
+  },
+  general = {
+    gaps_in = 1,
+    gaps_out = 1,
+    col = {
+      active_border = "rgba(ffffff80)",
+    },
+  },
+  group = {
+    col = {
+      border_active = "rgba(ffffff80)",
+    },
+  },
+})
+
+-- Opt another application in to Omarchy's standard transparency.
+-- Find its class with: hyprctl clients
+-- o.transparent_window("my-app")
+-- o.transparent_window("my-app", "0.9 0.85") -- Custom active/inactive opacity.

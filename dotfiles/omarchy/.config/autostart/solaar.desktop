@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Solaar
+Comment=Enable MX Master 3S thumb gestures
+Exec=solaar --window hide
+TryExec=solaar
+Icon=solaar
+Terminal=false
+StartupNotify=false
